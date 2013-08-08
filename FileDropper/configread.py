@@ -2,9 +2,9 @@
 
 def readconfigFile(filename):
     try:
-        print "Reading Configuration File"
+        #print "Reading Configuration File"
         config = open( filename, 'r')
-        print "FileName: " + config.name
+        #print "FileName: " + config.name
     
         config_vars = {}
         for line in iter(config):
