@@ -17,14 +17,14 @@ while True:
     """
     if config["BATCH"]:
         batchsize = int(config["BATCH"])
-   
+
     if config["EXTENSION"]:
        extension = config["EXTENSION"]
        filelist = [ files for files in os.listdir(src_dir) if extension in files ]
        #print "FileList: "
     else:
         filelist = [ files for files in os.listdir(src_dir) ]
-    
+
     #print filelist
     print str(datetime.datetime.now())
     print "Running Scheduled Task"
@@ -37,13 +37,13 @@ while True:
         print "Copying File"
         print "Source      : " + srcfile
         print "Destination : " + destfile
-        
+
         shutil.move(src_dir+"/"+files,dest_dir)
 
     if len(filelist) == 0:
         print "No File in Source Directory"
 
     print "Sleeping"
-    sleep(5)
+    sleep(int(sleeptime))
 
 print "Done"
