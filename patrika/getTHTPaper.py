@@ -9,11 +9,11 @@ from pyPdf import PdfFileWriter, PdfFileReader
 
 
 def main(date):
-      
+
   _paperDirectoryOutput = "paper"
   _urlbase = "http://epaper.thehimalayantimes.com/epaperimages/"
   cachedPaperDir = "cache/" + date
-  
+
   paperURL = _urlbase + date + "/"
 
   # Creating Daily Directory
@@ -100,7 +100,6 @@ def append_pdf(input,output):
 
 
 if __name__ == "__main__":
-      
   now = datetime.datetime.now()
   ddmmyy = "{:02d}{:02d}{:02d}".format(now.day, now.month, now.year)
 
@@ -110,5 +109,5 @@ if __name__ == "__main__":
     if ddmmyy in files:
       print "File Already Exists"
       sys.exit();
-  
+
   main(ddmmyy)
